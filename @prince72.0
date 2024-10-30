@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Diwali</title>
+    <style>
+        body {
+            background-image: url('https://example.com/night-sky.jpg'); /* Replace with a real URL of a night sky */
+            background-size: cover;
+            background-position: center;
+            color: #ffd700;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            overflow-x: hidden;
+            background-repeat: no-repeat;
+        }
+        .container {
+            border: 10px solid #FFD700; /* Yellow border */
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            max-width: 80%;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: none; /* Hidden initially */
+        }
+        h1 {
+            font-size: 3em;
+            color: #FF4500;
+            animation: flicker 1.5s infinite alternate;
+        }
+        p {
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #000000;
+        }
+        @keyframes flicker {
+            0% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
+        /* Firework animation */
+        .firework {
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            animation: explode 2s ease-out infinite;
+        }
+        @keyframes explode {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(5);
+                opacity: 0;
+            }
+        }
+        .show-button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            background-color: #FF4500;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        /* Children and firecracker styles */
+        .child {
+            width: 100px;
+            position: absolute;
+        }
+        .firecracker {
+            width: 40px;
+            position: absolute;
+            animation: flicker 0.5s infinite alternate;
+        }
+        .child1 { left: 10%; top: 70%; }
+        .child2 { right: 10%; top: 70%; }
+        .firecracker1 { left: 15%; top: 60%; }
+        .firecracker2 { right: 15%; top: 60%; }
+    </style>
+</head>
+<body>
+
+    <button class="show-button" onclick="showMessage()">Click here to see Diwali Wishes!</button>
+
+    <div class="container" id="messageContainer">
+        <h1>Happy Diwali!</h1>
+        <p>आप सभी को प्रिंस राजपूत की तरफ से दीपावली और भाईदूज की हार्दिक शुभकामनाएं</p>
+    </div>
+
+    <!-- Fireworks effect -->
+    <div class="firework" style="top: 20%; left: 40%; animation-delay: 0s; display: none;" id="firework1"></div>
+    <div class="firework" style="top: 30%; left: 60%; animation-delay: 0.5s; display: none;" id="firework2"></div>
+    <div class="firework" style="top: 50%; left: 50%; animation-delay: 1s; display: none;" id="firework3"></div>
+    <div class="firework" style="top: 70%; left: 30%; animation-delay: 1.5s; display: none;" id="firework4"></div>
+    <div class="firework" style="top: 80%; left: 70%; animation-delay: 2s; display: none;" id="firework5"></div>
+
+    <!-- Children and Firecrackers -->
+    <img src="https://example.com/child1.png" class="child child1" id="child1" style="display: none;">
+    <img src="https://example.com/firecracker1.png" class="firecracker firecracker1" id="firecracker1" style="display: none;">
+    <img src="https://example.com/child2.png" class="child child2" id="child2" style="display: none;">
+    <img src="https://example.com/firecracker2.png" class="firecracker firecracker2" id="firecracker2" style="display: none;">
+
+    <script>
+        function showMessage() {
+            document.getElementById('messageContainer').style.display = 'block';
+            document.getElementById('firework1').style.display = 'block';
+            document.getElementById('firework2').style.display = 'block';
+            document.getElementById('firework3').style.display = 'block';
+            document.getElementById('firework4').style.display = 'block';
+            document.getElementById('firework5').style.display = 'block';
+            document.getElementById('child1').style.display = 'block';
+            document.getElementById('firecracker1').style.display = 'block';
+            document.getElementById('child2').style.display = 'block';
+            document.getElementById('firecracker2').style.display = 'block';
+            document.querySelector('.show-button').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
